@@ -55,14 +55,14 @@
         <script type="text/javascript">
           // Initialize EmailJS with your user ID
           (function() {
-            emailjs.init("vEEMaEqGoa14AwvFK"); // Replace with your EmailJS public key
+            emailjs.init("oUEkB0D-bIkW7xg0i"); // Replace with your EmailJS public key
           })();
 
           document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent default form submission behavior
 
             // Send email using EmailJS
-            emailjs.sendForm('service_tih5ha9', 'template_3q2yjva', this)
+            emailjs.sendForm('service_mjxtmue', 'template_3hwg03o', this)
               .then(function() {
                 document.getElementById('status').innerText = "Message sent successfully!";
               }, function(error) {
