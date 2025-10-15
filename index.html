@@ -1,0 +1,198 @@
+<html lang="en-us">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="styleVERT.css">
+    <title>VERTEXIS</title>
+    <link rel="icon" type="image/png" href="LOGO/webIcon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/montserrat-alternates" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+                <img src="LOGO/LogoWeb.png" class="logo" href="#home">
+        </a>
+        <nav>
+            <div class="navbar" id="navbar">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul id="Links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </header>
+
+        <!--HOME-->
+
+    <section class="home" id="home">
+        <h1>GAMING</h1>
+        <h2>REDEFINED.</h2>
+    </section>
+
+        <!--ABOUT US-->
+
+    <section class="aboutus" id="aboutus">
+        <div class="textSection">
+            <h3>WE ARE</h3>
+            <h4 class="bigHeader">MOONWAKE</h4>
+
+            <div class="smallDivider-Text"></div>
+
+            <h3>BEEN MAKING GAMES FOR</h3>
+            <h4>6 YEARS+</h4>
+            <h3 class="smallHeader">ON ROBLOX STUDIO &amp; UNREAL ENGINE</h3>
+        </div>
+        <div class="imgSection">
+            <img src=HOME/robloxlogo.png class="robloxLogo">
+            <div class="smallDivider"></div>
+            <img src=HOME/unrealenginelogo.png class="UELogo">
+        </div>
+    </section>
+
+        <!--GAMES-->
+    <section class="games" id="games">
+        <h5>GAMES</h5>
+        <div class="container">
+            <div class="tabs">
+                <button class="tab" data-tab="pandemonium">Pandemonium</button>
+                <button class="tab" data-tab="kentucky">Kentucky</button>
+                <button class="tab" data-tab="mad">MAD Mayhem</button>
+            </div>
+
+            <div class="content">
+                <div class="tab-content" id="pandemonium">
+                    <div><img src="HOME/pandImg.jpeg" class="gameImg"></div>
+                    <div class="gameText">
+                        <h6>PANDEMONIUM</h6>
+                        <p>Pandemonium is a fighter-horror game on Roblox. It features 2 modes - Story and Endless. Story incorporates a storyline into the players gameplay. Endless is a multiplayer option where players can fight for unlimited rounds. Find out more by hitting the play button!</p>
+                        <a href="https://www.roblox.com/games/16842223113/PANDEMONIUM" target="_blank">
+                            <button class="pandP">PLAY EARLY ACCESS</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="tab-content" id="kentucky">
+                    <div><img src="HOME/kentuckyImg.jpeg" class="gameImg"></div>
+                    <div class="gameText">
+                        <h6>KENTUCKY</h6>
+                        <p>Kentucky is an open-world RPG game on Roblox which includes driving, roleplaying, adventure and more. Unfortunately, this game does not feature new updates due to low demand.</p>
+                        <a href="https://www.roblox.com/games/9078894185/Kentucky-ALPHA" target="_blank">
+                            <button class="kentuckyP">PLAY NOW</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="tab-content" id="mad">
+                    <div><img src="HOME/madImg.png" class="gameImg"></div>
+                    <div class="gameText">
+                        <h6>MAD MAYHEM</h6>
+                        <p>MAD Mayhem is a first person shooter(FPS) game that combined strategic maps and realistic weaponry to form a wonderful mix of combat. However, due to increasing programming issues and organization issues, this game has been discontinued.</p>
+                        <button class="madP">STOPPED 2024</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--PARTNERS-->
+
+    <!-- <section class="partners">
+        <div class="leftSection">
+            <h5>PARTNER</h5>
+        </div>
+        <div class="smallDividerVert"></div>
+        <div class="rightSection">
+            <a href="https://discord.com/invite/75Q2qp7UJA" target="_blank">
+                <img src="HOME/rmLogo.png" class="rmLogo">
+            </a>
+            <p class="partnerDesc">RACING MANIA<br>[Community Discord]</p>
+        </div>
+    </section> -->
+    
+    <!--FOOTER-->
+    
+    <footer>
+        <div class="footerText">
+            <h6 class="footerTitle">MOONWAKE 2025 </h6>
+            <h6 class="footerTitle">| ALL RIGHTS RESERVED</h6>
+        </div>
+        <div class="socials">
+            <a href="https://discord.com/invite/c6zETbVEAa" target="_blank">
+                <img src="SOCIALS/discordSocial.png" class="social-1">
+            </a>
+            <a href="https://www.instagram.com/vertexisofficial/" target="_blank">
+                <img src="SOCIALS/instaSocial.png" class="social-2">
+            </a>
+            <a href="https://www.youtube.com/@vertexisofficial" target="_blank">
+                <img src="SOCIALS/ytSocial.png" class="social-3">
+            </a>
+        </div>
+        
+    </footer>
+    
+    
+    
+</body>
+</html>
+<script>
+    const games = document.getElementById("games")
+    const tabs = document.querySelectorAll(".tab");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        // Remove active class from all tabs
+        tabs.forEach((t) => t.classList.remove("active"));
+        // Remove active class from all tab-contents
+        tabContents.forEach((content) => content.classList.remove("active"));
+
+        // Add active class to the clicked tab
+        tab.classList.add("active");
+
+        // Find the corresponding tab-content and activate it
+        const tabId = tab.getAttribute("data-tab");
+        document.getElementById(tabId).classList.add("active");
+        games.style.height = "100vh"
+      });
+    });
+
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function(event) {
+            const href = this.getAttribute('href');
+
+ 
+            if (href.startsWith("#")) {
+                return;
+            }
+
+            event.preventDefault();
+            document.body.classList.add('fade-out');
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500); // Match the duration of your fade-out animation
+        });
+    });
+
+    
+    window.onload = function() {
+        window.scrollTo(0, 0);
+    };
+
+</script>
+<script>
+    var navbar = document.getElementById("navbar")
+    var ul = document.getElementbyId("Links")
+
+    function showMenu(){
+        navbar.style.top = "0"
+    }
+    function hideMenu(){
+        navbar.style.top = "-200vh"
+    }
+</script>

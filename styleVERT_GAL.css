@@ -1,0 +1,356 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Gruppo", Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    opacity: 0;
+    animation: fadeInAnimation 1s forwards;
+}
+
+@keyframes fadeInAnimation{
+    to{
+        opacity: 1;
+    }
+}
+
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: url('FONTS/MontserratAlternates-Medium.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes textGradientAnimation{
+    0%{
+        background-position: 0% 0%;
+    }
+    
+    50%{
+        background-position: 100% 100%;
+    }
+    
+    100%{
+        background-position: 0% 0%;
+    }
+}
+
+
+.gruppo-regular {
+  font-family: "Gruppo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header{
+    width: 100%;
+    height: 15vh;
+    align-content: center;
+    background-color: black;
+    position: fixed;
+    align-items: center;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 195px;
+    height: 75px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+ul{
+    display: flex;
+    justify-content: right;
+    list-style-type: none;
+}
+
+ul li{
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    margin: 0 20px;
+    padding: 5px 0 5px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;   
+    font-weight: 600;
+    font-size: 25px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+ul li::after{
+    content: '';
+    align-self: center;
+    height: 1px;
+    width: 0%;
+    background-color: #76a1ff;
+    border-radius: 12px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+ul li:hover::after{
+    width: 100%;
+    transition: 0.3s;
+}
+
+ul li a:hover{
+    color: #76a1ff;
+    transition: 0.3s;
+}
+
+
+/*GALLERY PAGE*/
+.gallery{
+    width: 100%;
+    height: 74.5vh;
+    padding-top: 15vh;
+    background-image: url(GALLERY/gallerybg.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.galleryDiv{
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    font-size: 40;
+    color: white;
+    text-shadow: 0 0 5px rgba(0,0,0,1);
+    padding: 5px;
+}
+p{
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+
+.galBtn{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    transition: 0.3s;
+}
+
+.galBtn:hover{
+    background-color: transparent;
+    border: solid 1px rgba(255,255,255,1);
+    color: white;
+}
+
+
+/*FOOTER*/
+
+footer{
+    width: 100%;
+    height: 10vh;
+    background-color: black;
+    border-top: 0.5px solid #fff;
+    display: flex;
+}
+
+.footerText{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.footerTitle{
+    color: white;
+    padding: 2px;
+    font-size: 13;
+    font-weight: bold;
+}
+
+.socials{
+    width: 30%;
+    text-align: right;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.social-1, .social-2, .social-3{
+    width: 30px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 10px;
+    border: 0.5px solid #fff;
+    transition: 0.3s;
+}
+
+.social-1:hover{
+    box-shadow: 0 0 20px rgba(116, 116, 255, 1);
+}
+
+.social-2:hover{
+    box-shadow: 0 0 20px rgba(227, 104, 255,1);
+}
+
+.social-3:hover{
+    box-shadow: 0 0 20px rgba(255, 116, 116,1);
+}
+
+@media(max-width: 1024px){
+    ul{
+        z-index: 10;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    ul li{
+        padding-top: 10px;
+        font-size: 20px;
+    }
+    .logo{
+        width: 200px;
+        height: 79px;
+    }
+    
+    nav .fa{
+        display: block;
+        color: white;
+        margin: 5px;
+        padding: 20px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .navbar{
+        overflow: hidden;
+        position: absolute;
+        background: linear-gradient(rgba(0,20,50,1),rgba(25,140,255,1), rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0));
+        height: 200vh;
+        width: 100%;
+        top: -200vh;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: left;
+        z-index: 5;
+        transition: 1s;
+    }
+    
+    .gallery-container{
+        width: 100%;
+        height: 60vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .gallery-row{
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .img{
+        max-width: 100%;
+        height: auto;
+        margin: 10px;
+        border-radius: 20px;
+        position: relative;
+        z-index: 1;
+        transition: 0.5s;
+    }
+    
+    footer{
+        width: 100%;
+        height: 20vh;
+        background-color: black;
+        border-top: 0.5px solid #fff;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footerText{
+        width: 100%;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .footerTitle{
+        color: white;
+        padding: 2px;
+        font-size: 13;
+        font-weight: bold;
+    }
+    
+    .footerText, .footerTitle{
+        box-sizing: border-box;
+    }
+
+    .socials{
+        width: 100%;
+        text-align: right;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        padding: 0;
+    }
+
+    .social-1, .social-2, .social-3{
+        width: 30px;
+        padding: 15px;
+        cursor: pointer;
+        background-color: black;
+        border-radius: 10px;
+        border: 0.5px solid #fff;
+        transition: 0.3s;
+        margin: 20px;
+    }
+    .social-1:hover{
+        box-shadow: 0 0 20px rgba(116, 116, 255, 1);
+    }
+
+    .social-2:hover{
+        box-shadow: 0 0 20px rgba(227, 104, 255,1);
+    }
+
+    .social-3:hover{
+        box-shadow: 0 0 20px rgba(255, 116, 116,1);
+    }
+}

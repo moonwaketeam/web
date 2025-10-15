@@ -1,0 +1,497 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Gruppo", Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    opacity: 0;
+    animation: fadeInAnimation 1s forwards;
+}
+
+@keyframes fadeInAnimation{
+    to{
+        opacity: 1;
+    }
+}
+
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: url('FONTS/MontserratAlternates-Medium.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes textGradientAnimation{
+    0%{
+        background-position: 0% 0%;
+    }
+    
+    50%{
+        background-position: 100% 100%;
+    }
+    
+    100%{
+        background-position: 0% 0%;
+    }
+}
+
+
+.gruppo-regular {
+  font-family: "Gruppo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header{
+    width: 100%;
+    height: 15vh;
+    align-content: center;
+    background-color: black;
+    position: fixed;
+    align-items: center;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 195px;
+    height: 75px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+ul{
+    display: flex;
+    justify-content: right;
+    list-style-type: none;
+}
+
+ul li{
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    margin: 0 20px;
+    padding: 5px 0 5px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;   
+    font-weight: 600;
+    font-size: 25px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+ul li::after{
+    content: '';
+    align-self: center;
+    height: 1px;
+    width: 0%;
+    background-color: #76a1ff;
+    border-radius: 12px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+ul li:hover::after{
+    width: 100%;
+    transition: 0.3s;
+}
+
+ul li a:hover{
+    color: #76a1ff;
+    transition: 0.3s;
+}
+
+/*Section1*/
+.sect1{
+    width: 100%;
+    height: 80vh;
+    padding-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: black;
+}
+
+h1{
+    font-size: 30;
+    color: white;
+    padding: 20px;
+}
+
+h2{
+    color: transparent;
+    font-family: "Montserrat Alternates", Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 70;
+    padding-bottom: 20px;
+    background: linear-gradient(135deg, #004FFF, #B0E0E6, #fff,#004FFF,#B0E0E6);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: textGradientAnimation 10s infinite;
+}
+
+.tabs{
+    display: flex;
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab{
+    width: 25%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    margin: 10px;
+    border-radius: 100px;
+    padding: 20px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 20px #004FFF;
+    transition: 1s;
+}
+
+h3{
+    font-size: 35;
+    font-weight: bold;
+    color: white;
+}
+
+.smallDivider {
+    background-color: white;
+    height: 0.5px;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    margin: 20px 0;
+    content: '';    
+    z-index: 0;
+}
+
+p{
+    font-size: 17;
+    font-weight: lighter;
+    color: white;
+}
+
+.tab:hover{
+    background-color: #bde8ea;
+}
+
+.tab:hover .smallDivider{
+    background-color: black;
+}
+
+.tab:hover h3, .tab:hover p{
+    color: black;
+}
+
+
+/*SECTION2*/
+
+.sect2{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+h4{
+    color: white;
+    text-align: center;
+    font-size: 30;
+    padding: 20px;
+}
+
+.slidesDivision{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.slides{
+    display: flex;
+    width: 500vw;
+    text-align: center;
+    transition: transform 1s ease-in-out;
+    padding: 20px;
+}
+
+.slide{
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.abtusImg{
+    width: 90%;
+    height: 60vh;
+    object-fit: cover;
+    border-radius: 50px;
+    transition: transform 0.2s ease;
+}
+
+
+
+.slideText{
+    position: absolute;
+    width: 50%;
+    align-content: center;
+    bottom: 5%;
+    left: 10%;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+h5{
+    font-size: 20;
+    text-shadow: 0 0 5px rgba(255,255,255,1);
+}
+
+.slideBody{
+    font-size: 15;
+}
+
+
+.backBtn, .nextBtn {
+    position: absolute;
+    top: 50%;
+    border-radius: 1000px;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-family: Georgia;
+    font-size: 20;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.1s;
+}
+
+.backBtn {
+    left: 10px;
+}
+
+.nextBtn {
+    right: 10px;
+}
+
+.backBtn:hover, .nextBtn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 30;
+}
+
+
+
+
+/*FOOTER*/
+
+footer{
+    width: 100%;
+    height: 10vh;
+    background-color: black;
+    border-top: 0.5px solid #fff;
+    display: flex;
+}
+
+.footerText{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.footerTitle{
+    color: white;
+    padding: 2px;
+    font-size: 13;
+    font-weight: bold;
+}
+
+.socials{
+    width: 30%;
+    text-align: right;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.social-1, .social-2, .social-3{
+    width: 30px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 10px;
+    border: 0.5px solid #fff;
+    transition: 0.3s;
+}
+
+.social-1:hover{
+    box-shadow: 0 0 20px rgba(116, 116, 255, 1);
+}
+
+.social-2:hover{
+    box-shadow: 0 0 20px rgba(227, 104, 255,1);
+}
+
+.social-3:hover{
+    box-shadow: 0 0 20px rgba(255, 116, 116,1);
+}
+
+/*SMALL DEVICE*/
+
+@media(max-width: 1024px){
+    ul{
+        z-index: 10;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    ul li{
+        padding-top: 10px;
+        font-size: 20px;
+    }
+    .logo{
+        width: 200px;
+        height: 79px;
+    }
+    
+    nav .fa{
+        display: block;
+        color: white;
+        margin: 5px;
+        padding: 20px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .navbar{
+        overflow: hidden;
+        position: absolute;
+        background: linear-gradient(rgba(0,20,50,1),rgba(25,140,255,1), rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0));
+        height: 200vh;
+        width: 100%;
+        top: -200vh;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: left;
+        z-index: 5;
+        transition: 1s;
+    }
+    
+    /*SECTION 1*/
+    .sect1{
+        height: 150vh;
+    }
+    
+    .textSection{
+        margin-bottom: 200px;
+    }
+    h1{
+        font-size: 20;
+    }
+    h2{
+        font-size: 50;
+    }
+    
+    .tabs{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .tab{
+        padding: 20px;
+        width: 80%;
+    }
+    
+    
+    footer{
+        width: 100%;
+        height: 20vh;
+        background-color: black;
+        border-top: 0.5px solid #fff;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footerText{
+        width: 100%;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .footerTitle{
+        color: white;
+        /*padding: 2px;*/
+        font-size: 13;
+        font-weight: bold;
+    }
+    
+    .footerText, .footerTitle{
+        box-sizing: border-box;
+    }
+
+    .socials{
+        width: 100%;
+        text-align: right;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        padding: 0;
+    }
+
+    .social-1, .social-2, .social-3{
+        width: 30px;
+        padding: 15px;
+        cursor: pointer;
+        background-color: black;
+        border-radius: 10px;
+        border: 0.5px solid #fff;
+        transition: 0.3s;
+        margin: 20px;
+    }
+    .social-1:hover{
+        box-shadow: 0 0 20px rgba(116, 116, 255, 1);
+    }
+
+    .social-2:hover{
+        box-shadow: 0 0 20px rgba(227, 104, 255,1);
+    }
+
+    .social-3:hover{
+        box-shadow: 0 0 20px rgba(255, 116, 116,1);
+    }
+
+    
+}
+

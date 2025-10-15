@@ -1,0 +1,180 @@
+<html lang="en-us">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="styleVERT_ABTUS.css">
+    <title>VERTEXIS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="LOGO/webIcon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/montserrat-alternates" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+                <img src="LOGO/LogoWeb.png" class="logo" href="#home">
+        </a>
+        <nav>
+            <div class="navbar" id="navbar">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul id="Links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </header>
+    <section class="sect1">
+        <div class="textSection">
+            <h1>THIS IS</h1>
+            <h2>MOONWAKE</h2>
+        </div>
+        <div class="tabs">
+            <div class="tab">
+                <h3>Virtue</h3>
+                <div class="smallDivider"></div>
+                <p>Moonwake combines gaming with social responsibility, using creativity to support charitable causes. Each project integrates philanthropy, ensuring gaming contributes positively to society, making a difference through entertainment.</p>
+            </div>
+            <div class="tab">
+                <h3>Axis</h3>
+                <div class="smallDivider"></div>
+                <p>Moonwake acts as the central axis where gaming and charity converge. The company connects gamers, developers, and charities, directing attention and resources toward meaningful causes, fostering impactful collaborations.</p>
+            </div>
+            <div class="tab">
+                <h3>Gaming</h3>
+                <div class="smallDivider"></div>
+                <p>Moonwake transforms gaming into a philanthropic tool, embedding charity within gameplay. Players contribute to causes as they play, turning entertainment into meaningful action, proving gaming's potential for positive change.</p>
+            </div>
+        </div>
+    </section>
+    <section class="sect2">
+    <h4>A JOURNEY THROUGH TIME</h4>
+    <div class="slidesDivision">
+        <button class="backBtn" id="backBtn">&lt;</button>
+        <div class="slides">
+            <div class="slide">
+                <img class="abtusImg" src="ABOUT%20US/abtus1.png">
+                <div class="slideText">
+                    <h5>2018-2021 DOMINO STUDIOS</h5>
+                    <p class="slideBody">The starting years for Vertexis was rough. Back then, we were named Domino Studios and were new to the gaming world. The games we made just weren't up to par. Until we decided to change...</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img class="abtusImg" src="ABOUT%20US/abtus2.png">
+                <div class="slideText">
+                    <h5>2021-2023 ZIONTRA</h5>
+                    <p class="slideBody">We decided to change... Entirely. From our mission as a company to our game development. Changing our perspective to allowing game development be a part of charity. The quality of our games had improved. However, they still were unpopular. After a tough decision, we decided to discontinue our Kentucky Series to move on to more advanced games...</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img class="abtusImg" src="ABOUT%20US/abtus3.png">
+                <div class="slideText">
+                    <h5>2023-2024 ZIONTRA</h5>
+                    <p class="slideBody">This time, we took things a step ahead. We had modernised the logo and overall design of the company. With new ambitions set in place, we worked on our new FPS game "MAD Mayhem". Unfortunately, due to the rising programming troubles and game organization issues, we dropped the entire game. This was one of the hardest points the company had to go through...</p>
+                </div>
+            </div>            
+            <div class="slide">
+                <img class="abtusImg" src="ABOUT%20US/abtus4.png">
+                <div class="slideText">
+                    <h5>2024 VERTEXIS</h5>
+                    <p class="slideBody">2024 was the year of BIG change. We changed the name(for the second time),  logo and overall mission of the company. We have become a social enterprise where we partially use revenue from games that we make to donate to charity. Furthermore, we are slowly transitioning from Roblox games to making a few games on Unreal Engine too. This will boost our game quality tremendously. We hope this will be a better start compared to the last changes in the company.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img class="abtusImg" src="ABOUT%20US/abtus5.png">
+                <div class="slideText">
+                    <h5>2025 ONWARDS MOONWAKE</h5>
+                    <p class="slideBody">Once again, the entire company took a complete overhaul to renew our overall purpose - To make awesome games and to help the people around us. Moonwake was formed to be the overseeing company that handles both charity and game development. Moonwake Interactive was soon established to focus primarily on making our games.</p>
+                </div>
+            </div>
+        </div>
+        <button class="nextBtn" id="nextBtn">&gt;</button>
+    </div>
+            <script type="text/javascript">
+                let counter = 0;  // Start at the first slide
+                const slides = document.querySelector('.slides');
+                const totalSlides = document.querySelectorAll('.slide').length;
+
+                document.getElementById('nextBtn').addEventListener('click', () => {
+                    counter++;
+                    if (counter >= totalSlides) {
+                        counter = 0;  // Loop back to the first slide
+                    }
+                    slides.style.transform = `translateX(-${counter * 100}vw)`;
+                });
+
+                document.getElementById('backBtn').addEventListener('click', () => {
+                    counter--;
+                    if (counter < 0) {
+                        counter = totalSlides - 1;  // Loop back to the last slide
+                    }
+                    slides.style.transform = `translateX(-${counter * 100}vw)`;
+                });
+            </script>
+            <script>
+                
+                document.querySelectorAll('.abtusImg').forEach(img=>{
+                    img.addEventListener('mousemove',function(e){
+                    const imgRect = img.getBoundingClientRect();
+                    const imgWidth = imgRect.width;
+                    const imgHeight = imgRect.height;
+                    const mouseX = e.clientX - imgRect.left;
+                    const mouseY = e.clientY - imgRect.top;
+                    
+                    const xPercent = (mouseX/imgWidth) - 0.5;
+                    const yPercent = (mouseY/imgHeight) - 0.5;
+                    
+                    const sensitivity = 9;
+                    
+                    const skewX = xPercent * sensitivity;
+                    const skewY = yPercent * sensitivity;
+                    
+                    img.style.transform = `skew(${skewY}deg, ${skewX}deg)`;
+                    });
+                    img.addEventListener('mouseleave',function(){
+                        img.style.transform = `skew(0deg, 0deg)`;
+                    });
+                });
+            </script>
+    </section>
+    
+    <!--FOOTER-->
+    
+    <footer>
+        <div class="footerText">
+            <h6 class="footerTitle">MOONWAKE 2025</h6>
+            <h6 class="footerTitle">| ALL RIGHTS RESERVED</h6>
+        </div>
+        <div class="socials">
+            <a href="https://discord.com/invite/c6zETbVEAa" target="_blank">
+                <img src="SOCIALS/discordSocial.png" class="social-1">
+            </a>
+            <a href="https://www.instagram.com/vertexisofficial/" target="_blank">
+                <img src="SOCIALS/instaSocial.png" class="social-2">
+            </a>
+            <a href="https://www.youtube.com/@vertexisofficial" target="_blank">
+                <img src="SOCIALS/ytSocial.png" class="social-3">
+            </a>
+        </div>
+        
+    </footer>
+    
+    
+<script>
+    var navbar = document.getElementById("navbar")
+    var ul = document.getElementbyId("Links")
+
+    function showMenu(){
+        navbar.style.top = "0"
+    }
+    function hideMenu(){
+        navbar.style.top = "-200vh"
+    }
+</script>
+</body>
+</html>

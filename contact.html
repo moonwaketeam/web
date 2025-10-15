@@ -1,0 +1,129 @@
+<html lang="en-us">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="styleVERT_CONT.css">
+    <title>VERTEXIS</title>
+    <link rel="icon" type="image/png" href="LOGO/webIcon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/montserrat-alternates" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+                <img src="LOGO/LogoWeb.png" class="logo" href="#home">
+        </a>
+        <nav>
+            <div class="navbar" id="navbar">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul id="Links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </header>
+        
+        <section class="form">
+            <div class="form-container">
+                <h1>Contact Us</h1>
+                <form id="contact-form" class="contact-form">
+                    <label for="name" class="label">Name</label><br>
+                    <input type="text" id="name" class="input" name="user_name" placeholder="Enter your full name" required><br><br>
+                    
+                    <label for="email" class="label">Email</label><br>
+                    <input type="email" id="email" class="input" name="user_email" placeholder="Enter your email" required><br><br>
+                    
+                    <label for="message" class="label">Message</label><br>
+                    <textarea id="message" name="message" class="message" placeholder="Enter a message/enquiry" required></textarea><br>
+                    
+                    <span id="word-count" class="word-count">0/80 words</span><br><br>
+                    
+                    <button type="submit" class="submitBtn">Submit</button>
+                </form>
+                <div id="status"></div>
+            </div>
+        </section>
+        
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+        <script type="text/javascript">
+          // Initialize EmailJS with your user ID
+          (function() {
+            emailjs.init("vEEMaEqGoa14AwvFK"); // Replace with your EmailJS public key
+          })();
+
+          document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission behavior
+
+            // Send email using EmailJS
+            emailjs.sendForm('service_tih5ha9', 'template_3q2yjva', this)
+              .then(function() {
+                document.getElementById('status').innerText = "Message sent successfully!";
+              }, function(error) {
+                document.getElementById('status').innerText = "Failed to send message. Try again!";
+                console.log('FAILED...', error);
+              });
+          });
+        </script>
+        
+        
+        <script>
+          const messageField = document.getElementById('message');
+          const wordCountDisplay = document.getElementById('word-count');
+          const maxWords = 80;
+
+          messageField.addEventListener('input', function () {
+              
+            const words = this.value.trim().split(/\s+/).filter(function(word) {
+              return word.length > 0;
+            });
+
+
+            wordCountDisplay.textContent = `${words.length}/${maxWords} words`;
+
+            if (words.length > maxWords) {
+              this.value = words.slice(0, maxWords).join(" ");
+              wordCountDisplay.textContent = `${maxWords}/${maxWords} words`;
+            }
+          });
+        </script>
+        <script>
+            var navbar = document.getElementById("navbar")
+            var ul = document.getElementbyId("Links")
+
+            function showMenu(){
+                navbar.style.top = "0"
+            }
+            function hideMenu(){
+                navbar.style.top = "-200vh"
+            }
+        </script>
+
+        <!--FOOTER-->
+
+        <footer>
+            <div class="footerText">
+                <h6 class="footerTitle">MOONWAKE 2025</h6>
+                <h6 class="footerTitle">| ALL RIGHTS RESERVED</h6>
+            </div>
+            <div class="socials">
+                <a href="https://discord.com/invite/c6zETbVEAa" target="_blank">
+                    <img src="SOCIALS/discordSocial.png" class="social-1">
+                </a>
+                <a href="https://www.instagram.com/vertexisofficial/" target="_blank">
+                    <img src="SOCIALS/instaSocial.png" class="social-2">
+                </a>
+                <a href="https://www.youtube.com/@vertexisofficial" target="_blank">
+                    <img src="SOCIALS/ytSocial.png" class="social-3">
+                </a>
+            </div>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,769 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Gruppo", Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    opacity: 0;
+    animation: fadeInAnimation 1s forwards;
+}
+
+@keyframes fadeInAnimation{
+    to{
+        opacity: 1;
+    }
+}
+
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: url('FONTS/MontserratAlternates-Medium.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+                
+
+
+@keyframes textGradientAnimation{
+    0%{
+        background-position: 0% 0%;
+    }
+    
+    50%{
+        background-position: 100% 100%;
+    }
+    
+    100%{
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+    }
+}
+
+
+.gruppo-regular {
+  font-family: "Gruppo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header{
+    width: 100%;
+    height: 15vh;
+    align-content: center;
+    background-color: black;
+    position: fixed;
+    align-items: center;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.logo{
+    width: 195px;
+    height: 75px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+ul{
+    display: flex;
+    justify-content: right;
+    list-style-type: none;
+}
+
+ul li{
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    margin: 0 20px;
+    padding: 5px 0 5px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;   
+    font-weight: 600;
+    font-size: 25px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+ul li::after{
+    content: '';
+    align-self: center;
+    height: 1px;
+    width: 0%;
+    background-color: #76a1ff;
+    border-radius: 12px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+ul li:hover::after{
+    width: 100%;
+    transition: 0.3s;
+}
+
+ul li a:hover{
+    color: #76a1ff;
+    transition: 0.3s;
+}
+
+/*HOME PAGE*/
+.home {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1)), url(HOME/webassethomecopy.PNG);
+    background-size: 100% 100vh, cover, contain;
+    background-position: center, center, bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: "Montserrat Alternates", Verdana, Geneva, Tahoma, sans-serif;
+    color: #76a1ff;
+    font-size: 95px;
+    opacity: 0;
+    text-shadow: 0 0 100px rgba(0,0,255,0.8);
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.6s;
+    z-index: 0;
+}
+
+h2 {
+    font-family: "Gruppo", Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-size: 35px; 
+    font-weight: 100;
+    opacity: 0;
+    z-index: 1;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1.3s;
+}
+
+/*ABOUT US*/
+
+.aboutus{
+    width: 100%;
+    height: 60vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.textSection{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h3{
+    color: white;
+    font-weight: 100;
+    font-size: 25;
+}
+
+h4{
+    font-family: "Montserrat Alternates", Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50;
+    padding: 25px;
+    color: #76a1ff;
+}
+
+.bigHeader{
+    font-size: 80px;
+    color: transparent;
+    background: linear-gradient(45deg, #B0E0E6, #76a1ff, #fff,#004FFF,#B0E0E6);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: textGradientAnimation 5s ease infinite;
+}
+
+/*
+.bigHeader{
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+*/
+
+.smallDivider, .smallDivider-Text {
+    background-color: white;
+    height: 0.5px;
+    width: 50%;
+    border-radius: 5px;
+    position: relative;
+    margin: 20px 0;
+    content: '';    
+    z-index: 0;
+}
+
+.smallheader{
+    font-size: small;
+}
+
+.imgSection{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.robloxlogo{
+    width: 150px;
+    transition: 0.3s;
+}
+
+.robloxlogo:hover{
+    width: 175px;
+    transition: 0.3s;
+}
+
+.UELogo{
+    width: 150px;
+    transition: 0.3s;
+    border-radius: 1000px;
+    border: 0.5px solid #fff;
+}
+
+.UELogo:hover{
+    width: 175px;
+    transition: 0.3s;
+}
+
+
+/*ABOUT US*/
+.games{
+    width: 100%;
+    height: 30vh;   
+    background-color: black;
+}
+
+h5{
+    text-align: center;
+    padding: 20px;
+    color: #76a1ff;
+    font-size: 50px;
+    font-family: "Montserrat Alternates", Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 0 0 20px rgba(0,0,255,0.5);
+}
+
+.container{
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.tabs{
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.tab{
+    background-color: black;
+    border: 1px solid #fff;
+    width: 30%;
+    height: 100%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: white;
+    font-size: 15;
+}
+
+.tab:hover{
+    background-color: #76a1ff;
+    box-shadow: 0 0 35px rgba(0,0,255,1);
+}
+
+.tab.active {
+    background-color: #ffffff;
+    border-bottom: 2px solid #76a1ff;
+    color: black;
+}
+
+.content{
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tab-content{
+    display: none;
+    width: 60%;
+    color: white;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.tab-content.active{
+    display: flex;
+    width: 75%;
+    border-radius: 25px;
+    padding: 20px;
+    border: 0.5px solid #fff;
+}
+
+.gameImg{
+    width: 250px;
+    height: auto;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 0 5px #fff;
+    margin-right: 20px;
+}
+
+
+.tab-content h6{
+    color: #76a1ff;
+    font-size: 40px;
+    font-family: "Montserrat Alternates", Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 0 0 10px rgba(0,0,255,0.5);
+    padding: 20px;
+}
+
+p{
+    padding: 0 10px 20px 20px;
+    font-size: 20
+}
+
+.kentuckyP, .madP, .pandP{
+    width: 170px;
+    margin-left: 20px;
+    height: 45px;
+    border: 1px double #fff;
+    border-radius: 50px;
+    font-size: 15;
+    transition: 0.2s ease;
+    cursor: pointer;
+    color: black;
+    font-weight: bold; 
+}
+
+.kentuckyP{
+    background-color: lightgreen;
+}
+
+.kentuckyP:hover{
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 20px rgba(0,255,0,1);
+    border: 4px double #fff;
+
+}
+
+.madP{
+    background-color: lightcoral;
+}
+
+.madP:hover{
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 20px rgba(255,0,0,1);
+    border: 4px double #fff;
+}
+
+.pandP{
+    background-color: lightgreen;
+}
+
+.pandP:hover{
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 20px rgb(0,255,0,1);
+    border: 4px double #fff;
+}
+
+/* PARTNERS
+.partners{
+    width: 100%;
+    height: 70vh;
+    padding-top: 20px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.leftSection{
+    width: 50%;
+    padding-left: 20px;
+}
+
+.rightSection{
+    width: 50%;
+    padding-right: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.rmLogo {
+    width: 250px;
+    border: 0.5px solid #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    background: none;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.rmLogo:hover{
+    border: 5px double #ffbb00;
+    box-shadow: 0 0 20px #ffbb00;
+    transition: 0.3s;
+}
+
+
+.partnerDesc{
+    color: white;
+}
+
+.smallDividerVert {
+    background-color: white;
+    rotate: 90deg;
+    height: 0.5px;
+    width: 20%;
+    border-radius: 5px;
+    position: relative;
+    margin: 20px 0;
+    content: '';    
+} */
+
+footer{
+    width: 100%;
+    height: 10vh;
+    background-color: black;
+    border-top: 0.5px solid #fff;
+    display: flex;
+}
+
+.footerText{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.footerTitle{
+    color: white;
+    padding: 2px;
+    font-size: 13;
+    font-weight: bold;
+}
+
+.socials{
+    width: 30%;
+    text-align: right;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.social-1, .social-2, .social-3{
+    width: 30px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 10px;
+    border: 0.5px solid #fff;
+    transition: 0.3s;
+}
+
+.social-1:hover{
+    box-shadow: 0 0 20px rgba(116, 116, 255, 1);
+}
+
+.social-2:hover{
+    box-shadow: 0 0 20px rgba(227, 104, 255,1);
+}
+
+.social-3:hover{
+    box-shadow: 0 0 20px rgba(255, 116, 116,1);
+}
+
+
+
+/*SMALL DEVICE*/
+
+@media(max-width: 800px){
+    ul{
+        z-index: 10;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    ul li{
+        padding-top: 10px;
+        font-size: 20px;
+    }
+    .logo{
+        width: 200px;
+        height: 79px;
+    }
+    
+    nav .fa{
+        display: block;
+        color: white;
+        margin: 5px;
+        padding: 20px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .navbar{
+        overflow: hidden;
+        position: absolute;
+        background: linear-gradient(rgba(0,20,50,1),rgba(25,140,255,1), rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,0));
+        height: 200vh;
+        width: 100%;
+        top: -200vh;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: left;
+        z-index: 5;
+        transition: 1s;
+    }
+    
+    
+    /*ABOUT US*/
+    .aboutus{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .imgSection{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+    }
+    
+    .textSection{
+        text-align: center;
+    }
+    
+    h1{
+        font-size: 45px;
+    }
+    
+    h2{
+        font-size: 25px;
+    }
+    
+    h3{
+        font-size: 20px;
+    }
+    
+    h4, .bigHeader{
+        font-size: 40px;
+    }
+    
+    .robloxLogo,.UELogo{
+        width: 100px;
+    }
+    
+    .robloxLogo:hover, .UELogo:hover{
+        width: 100px;
+    }
+    
+    .smallDivider{
+        width: 0.5px;
+        height: 50%;
+    }
+    
+    /*GAMES*/
+    .games{
+        height: 70vh;
+    }
+    
+    .tabs{
+        display: flex;
+        flex-direction: column;
+        height: 30%;
+        align-items: center;
+        margin-bottom: -50px;
+    }
+    .tab{
+        padding: 0;
+        width: 50%;
+        height: 40px;
+        font-size: 15;
+        font-weight: bold;
+    }
+    
+    .tab-content.active{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-content: center;
+    }
+    
+    .tab-content h6{
+        font-size: 20;
+    }
+    .tab-content p{
+        font-size: 15;
+    }
+    
+    .kentuckyP, .madP, .pandP{
+        width: 50%;
+        height: 35px;
+        font-size: 10;
+        margin-left: 0;
+    }
+    
+    .gameImg{
+        width: 100px;
+        margin-right: 0;
+    }
+    
+        /*PARTNERS*/
+    .partners{
+        width: 100%;
+        height: 70vh;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .leftSection{
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .rightSection{
+        width: 70%;
+        padding-right: 0;
+    }
+
+    .rmLogo {
+        width: 200px;
+        border: 0.5px solid #fff;
+        border-radius: 25px;
+        cursor: pointer;
+        background: none;
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+
+    .rmLogo:hover{
+        border: 5px double #ffbb00;
+        box-shadow: 0 0 20px #ffbb00;
+        transition: 0.3s;
+    }
+
+
+    .partnerDesc{
+        color: white;
+    }
+
+    .smallDividerVert {
+        display: none;
+    }
+    
+    footer{
+        width: 100%;
+        height: 20vh;
+        background-color: black;
+        border-top: 0.5px solid #fff;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footerText{
+        width: 100%;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .footerTitle{
+        color: white;
+        /*padding: 2px;*/
+        font-size: 13;
+        font-weight: bold;
+    }
+    
+    .footerText, .footerTitle{
+        box-sizing: border-box;
+    }
+
+    .socials{
+        width: 100%;
+        text-align: right;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        padding: 0;
+    }
+
+    .social-1, .social-2, .social-3{
+        width: 30px;
+        padding: 15px;
+        cursor: pointer;
+        background-color: black;
+        border-radius: 10px;
+        border: 0.5px solid #fff;
+        transition: 0.3s;
+        margin: 20px;
+    }
+    .social-1:hover{
+        box-shadow: 0 0 20px rgba(116, 116, 255, 1);
+    }
+
+    .social-2:hover{
+        box-shadow: 0 0 20px rgba(227, 104, 255,1);
+    }
+
+    .social-3:hover{
+        box-shadow: 0 0 20px rgba(255, 116, 116,1);
+    }
+
+    
+}
+
