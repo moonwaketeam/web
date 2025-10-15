@@ -50,28 +50,35 @@
                 <div id="status"></div>
             </div>
         </section>
-        
-        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-        <script type="text/javascript">
-          // Initialize EmailJS with your user ID
-          (function() {
-            emailjs.init("oUEkB0D-bIkW7xg0i"); // Replace with your EmailJS public key
-          })();
-
-          document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission behavior
-
-            // Send email using EmailJS
-            emailjs.sendForm('service_mjxtmue', 'template_3hwg03o', this)
-              .then(function() {
-                document.getElementById('status').innerText = "Message sent successfully!";
-              }, function(error) {
-                document.getElementById('status').innerText = "Failed to send message. Try again!";
-                console.log('FAILED...', error);
-              });
-          });
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script>
+        (function() {
+            emailjs.init('YOUR_USER_ID');
+        })();
         </script>
         
+        <script>
+            import emailjs from '@emailjs/browser';
+
+            export default {
+            methods: {
+                sendEmail() {
+                emailjs
+                    .sendForm('service_mjxtmue', 'template_15azuiu', this.$refs.form, {
+                    publicKey: 'oUEkB0D-bIkW7xg0i',
+                    })
+                    .then(
+                    () => {
+                        console.log('SUCCESS!');
+                    },
+                    (error) => {
+                        console.log('FAILED...', error.text);
+                    },
+                    );
+                },
+            },
+            };
+        </script>
         
         <script>
           const messageField = document.getElementById('message');
