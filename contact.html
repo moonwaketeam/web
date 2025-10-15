@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/montserrat-alternates" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -52,27 +54,26 @@
         </section>
         
         <script>
-            import emailjs from '@emailjs/browser';
-
-            export default {
-            methods: {
-                sendEmail() {
-                emailjs
-                    .sendForm('service_mjxtmue', 'template_15azuiu', this.$refs.form, {
-                    publicKey: 'oUEkB0D-bIkW7xg0i',
-                    })
-                    .then(
-                    () => {
-                        console.log('SUCCESS!');
-                    },
-                    (error) => {
-                        console.log('FAILED...', error.text);
-                    },
-                    );
-                },
-            },
-            };
+            (function() {
+                emailjs.init("oUEkB0D-bIkW7xg0i"); // Replace with your actual Public Key
+            })();
         </script>
+        <script>
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                emailjs.sendForm('service_mjxtmue', 'template_15azuiu', this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    document.getElementById('status').innerText = "Message sent successfully!";
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    document.getElementById('status').innerText = "Failed to send message. Please try again later.";
+                });
+            });
+        </script>
+
+
         
         <script>
           const messageField = document.getElementById('message');
